@@ -1,0 +1,2 @@
+psh-recovery:
+  - resource.type = "servicehealth.googleapis.com/Event" AND labels."servicehealth.googleapis.com/new_event" = true AND jsonPayload.category = "INCIDENT" AND (jsonPayload.relevance = "RELATED" OR jsonPayload.relevance = "IMPACTED" OR jsonPayload.relevance = "PARTIALLY_RELATED" OR jsonPayload.relevance = "UNKNOWN") AND jsonPayload.@type = "type.googleapis.com/google.cloud.servicehealth.logging.v1.EventLog" AND jsonPayload.State = "CLOSED" AND jsonPayload.impactedProducts =~ "Google Cloud Pub/Sub"
